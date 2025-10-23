@@ -1,0 +1,21 @@
+/dts-v1/;
+/plugin/;
+/{
+	compatible = "brcm,bcm2837";
+	fragment@0{
+		target = <&i2c1>;
+		__overlay__{
+			#address-cells = <1>;
+			#size-cells = <0>;
+			
+			simtemp: simtemp@4a{
+				compatible = "nxp,simtemp";
+				reg = <0x4a>;
+				sampling_ms = <1000>;
+				ltemp_alert_mC = <20000>;
+				htemp_alert_mC = <35000>;
+				status="okay";
+			};
+		};
+	};
+};
