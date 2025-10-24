@@ -3,3 +3,4 @@
 *.order
 *.mod
 *.mod.c
+build/
